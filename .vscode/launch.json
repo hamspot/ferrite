@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug firmware host tests",
+      "type": "lldb",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--manifest-path",
+          "${workspaceFolder}/Cargo.toml"
+        ],
+        "filter": {
+          "kind": "test"
+        }
+      },
+      "sourceLanguages": [
+        "rust"
+      ]
+    }
+  ]
+}

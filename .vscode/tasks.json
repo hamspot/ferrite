@@ -1,0 +1,233 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Firmware: mkbtf tx",
+      "type": "shell",
+      "command": "${env:HOME}/bin/run-build",
+      "args": [
+        "--",
+        "tools/mkbtf.sh",
+        "tx"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PATH": "${env:HOME}/Documents/Ferrite/.tools/node/bin:${env:HOME}/.cargo/bin:${env:HOME}/bin:${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": [
+        "$rustc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Firmware: mkbtf reader",
+      "type": "shell",
+      "command": "${env:HOME}/bin/run-build",
+      "args": [
+        "--",
+        "tools/mkbtf.sh",
+        "reader"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PATH": "${env:HOME}/Documents/Ferrite/.tools/node/bin:${env:HOME}/.cargo/bin:${env:HOME}/bin:${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": [
+        "$rustc"
+      ],
+      "group": "build"
+    },
+    {
+      "label": "Firmware: mkbtf restorer",
+      "type": "shell",
+      "command": "${env:HOME}/bin/run-build",
+      "args": [
+        "--",
+        "tools/mkbtf.sh",
+        "restorer"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PATH": "${env:HOME}/Documents/Ferrite/.tools/node/bin:${env:HOME}/.cargo/bin:${env:HOME}/bin:${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": [
+        "$rustc"
+      ],
+      "group": "build"
+    },
+    {
+      "label": "Firmware: cargo test",
+      "type": "shell",
+      "command": "${env:HOME}/bin/run-build",
+      "args": [
+        "--",
+        "cargo",
+        "test"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PATH": "${env:HOME}/Documents/Ferrite/.tools/node/bin:${env:HOME}/.cargo/bin:${env:HOME}/bin:${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": [
+        "$rustc"
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Firmware: driver tests",
+      "type": "shell",
+      "command": "${env:HOME}/bin/run-build",
+      "args": [
+        "--",
+        "cargo",
+        "test",
+        "-p",
+        "uradio-bus",
+        "-p",
+        "bk4829",
+        "-p",
+        "si4732",
+        "-p",
+        "st7789",
+        "-p",
+        "w25q",
+        "-p",
+        "keypad",
+        "-p",
+        "nmea",
+        "--all-features"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PATH": "${env:HOME}/Documents/Ferrite/.tools/node/bin:${env:HOME}/.cargo/bin:${env:HOME}/bin:${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": [
+        "$rustc"
+      ],
+      "group": "test"
+    },
+    {
+      "label": "Firmware: clippy",
+      "type": "shell",
+      "command": "${env:HOME}/bin/run-build",
+      "args": [
+        "--",
+        "cargo",
+        "clippy",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PATH": "${env:HOME}/Documents/Ferrite/.tools/node/bin:${env:HOME}/.cargo/bin:${env:HOME}/bin:${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": [
+        "$rustc"
+      ],
+      "group": "test"
+    },
+    {
+      "label": "Firmware: fw-clippy (tx)",
+      "type": "shell",
+      "command": "${env:HOME}/bin/run-build",
+      "args": [
+        "--",
+        "cargo",
+        "fw-clippy",
+        "--features",
+        "tx",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PATH": "${env:HOME}/Documents/Ferrite/.tools/node/bin:${env:HOME}/.cargo/bin:${env:HOME}/bin:${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": [
+        "$rustc"
+      ],
+      "group": "test"
+    },
+    {
+      "label": "Firmware: python ffw tests",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "-m",
+        "unittest",
+        "tools/test_ffw.py"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PATH": "${env:HOME}/Documents/Ferrite/.tools/node/bin:${env:HOME}/.cargo/bin:${env:HOME}/bin:${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": [],
+      "group": "test"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "terminal.integrated.env.linux": {
+    "PATH": "${env:HOME}/Documents/Ferrite/.tools/node/bin:${env:HOME}/.cargo/bin:${env:HOME}/bin:${env:PATH}"
+  },
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "rust-analyzer.linkedProjects": [
+    "Cargo.toml"
+  ],
+  "rust-analyzer.rustc.source": "discover",
+  "rust-analyzer.server.extraEnv": {
+    "RUSTUP_TOOLCHAIN": "nightly-2026-10-01"
+  },
+  "rust-analyzer.cargo.extraEnv": {
+    "RUSTUP_TOOLCHAIN": "nightly-2026-10-01"
+  },
+  "rust-analyzer.cargo.target": "thumbv7em-none-eabihf",
+  "rust-analyzer.cargo.allTargets": false,
+  "rust-analyzer.check.allTargets": false,
+  "rust-analyzer.cargo.buildScripts.enable": true,
+  "rust-analyzer.procMacro.enable": true,
+  "search.exclude": {
+    "**/target": true
+  }
+}
